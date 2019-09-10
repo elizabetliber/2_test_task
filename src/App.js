@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import list from './list.js';
+
+console.log(list)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table style={{width: '100%'}}>
+        <tr>
+          <th>name</th>
+          <th>date</th>
+          <th>count</th>
+        </tr>
+
+        {
+          list.map((element) =>
+            <tr>
+              <td>{element.name}</td>
+              <td>{element.date}</td>
+              <td>{element.count}</td>
+            </tr>)
+        }
+
+      </table>
     </div>
   );
 }
